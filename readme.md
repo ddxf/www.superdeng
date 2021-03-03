@@ -3,6 +3,7 @@
 ## 版本说明
 
 1.1 版本，添加了教程文章的模块，如果只是用最简单的博客功能，请选择 1.0 分支。
+2.(来源自broqiang/www.broqiang.com的学习以及拓展，独自搭建项目地址：https://www.superdeng.cn(服务器已关停))
 
 ## 环境
 
@@ -40,21 +41,21 @@ __方法一 直接通过 composer 安装__
 > - 此方法安装无法更新，有新的版本只能重新安装
 
 ```bash
-composer create-project broqiang/laravel-blog broqiang.com "1.1.*" 
+composer create-project broqiang/laravel-blog www.superdeng "1.1.*" 
 ```
 
 __方法二 通过 github 直接下载代码__
 
 ```bash
 
-git clone -b 1.1 https://github.com/BroQiang/www.broqiang.com.git
+git clone https://github.com/ddxf/www.superdeng.git
 
 ```
 
 #### 安装依赖关系
 
 ```
-cd broqiang.com
+cd www.superdeng
 composer install
 ```
 
@@ -75,7 +76,7 @@ cp .env.example .env
 # 修改配置文件
 
 APP_NAME= # 修改成自己的项目名称
-APP_URL=  # 换成自己网站的 URL，注意这个一定要换，本地上传图片和重置密码需要用到
+APP_URL=  # 
 
 # 数据库配置
 DB_HOST=127.0.0.1   # Mysql 的连接地址，本地的数据库一般就是 127.0.0.1
@@ -131,7 +132,7 @@ __创建数据库表__
 mysql -uroot -p
 
 # 创建 database
-create database www_broqiang_com;
+create database www_dneg_com;
 
 # 创建用户
 create user www@'127.0.0.1' identified by 'password';
@@ -167,9 +168,9 @@ php artisan migrate --seed
 ```nginx
 server {
     listen       80; # 端口,一般http的是80
-    server_name  blog.broqiang.com; # 一般是域名,本机就是localhost
+    server_name  www.superdeng.cn; # 一般是域名,本机就是localhost
     index index.php index.html;  # 默认可以访问的页面,按照写入的先后顺序去寻找
-    root  /www/web/www.broqiang.com/public; # 项目根目录
+    root  /www/web/www.superdeng/public; # 项目根目录
 
     # Laravel 的 url 重写
     location / {
